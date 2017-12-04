@@ -12,23 +12,16 @@ http.createServer(( req, res ) => {
 
 function getTitles( res ) {
 	fs.readFile('./list.json', ( err, data ) =>{
-		if ( err ) {
-			handleError( err, res );
-		}
-		else {
-			getTemplate( JSON.parse(data.toString()), res );
-		}
+		if ( err ) handleError( err, res );
+		getTemplate( JSON.parse(data.toString()), res );
+		
 	})
 }
 
 function getTemplate( titles, res ) {
 	fs.readFile('./index.html', ( err, data ) => {
-		if ( err ) {
-			handleError( err, res);
-		}
-		else {
-			formatHtml( titles, data.toString(), res );
-		}
+		if ( err ) return handleError( err, res );
+		formatHtml( titles, data.toString(), res );
 	})
 }
 
