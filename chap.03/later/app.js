@@ -1,12 +1,9 @@
 const express		= require('express');
 const bodyParser	= require('body-parser');
-const mongoose	= require('mongoose')
+const { ObjectID } 	= require('mongodb')
+const { mongoose }	= require('./db/mongoose');
+
 const {Article} = require('./models/article');
-
-//const mongodb 	= require('mongodb');
-
-const dbURL = 'mongodb://ahmed_soliman:abc123@ds129966.mlab.com:29966/later'
-mongoose.connect(dbURL);
 
 const app 	= express();
 const articles = [{ title: 'Exmaple' }];
@@ -15,16 +12,45 @@ app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+function isValidId(id) {
+	if( !ObjectID.isValid(id) ) {
+		return false;
+	}
+	return true;
+};
+
+
 // GET ARTICLES
-app.get ('/articles', ( req, res, next) => {
-	res.send(articles);
+app.get('/articles', ( req, res, next) => {
+	Article.find()
+		.then(
+			(articles) => {
+			res.status(200).send({ articles });
+			}, 
+			( err ) => {
+				res.status(404).send('Unable to fich articles')
+			})
 });
 
 // GET ARTICLE
 app.get('/articles/:id', ( req, res, next ) => {
-	let id = req.param.id;
-	console.log('fitching: ', id);
-	res.send(articles[id]);
+	let id = req.params.id;
+	
+
+	if( !ObjectID.isValid(id)) {
+		res.status(404).send('Invalid Id.')
+	}
+	else {
+		Article.findById(id)
+			.then(
+				( doc) => {
+					res.status(200).send({ doc })
+				},
+				( err ) => {
+					res.status(404).send('unable to fine article')
+				})
+	}
 });
 
 // POST ARTICLE
@@ -49,10 +75,21 @@ app.post('/articles', ( req, res ) => {
 
 // DELETE ARTICLE
 app.delete('/articles/:id', ( req, res ) => {
-	let id = req.param.id;
-	console.log('Deleting: ', id);
-	delete articles[id];
-	res.send({ message: 'Deleted' });
+	let id = req.params.id;
+
+	if( !isValidId(id) ) {
+		res.status(400).send('Invalid Id');
+	}
+	
+	Article.findByIdAndRemove(id)
+		.then(( doc ) => {
+			if( !doc ) {
+				return res.status(404).send('Unable to find Article with the provided Id')
+			}
+			res.status(200).send({ doc })
+		}, (err) => {
+			res.status(404).send('unable to find articl')
+		})
 });
 
 
