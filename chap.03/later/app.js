@@ -61,8 +61,18 @@ app.get('/articles/:id', ( req, res, next ) => {
 	else {
 		Article.findById(id)
 			.then(
-				( doc) => {
-					res.status(200).send({ doc })
+				( article ) => {
+					// start
+					res.format({
+						html: () => {
+							res.render('article.ejs', {article})
+						},
+						json: () => {
+							res.send(article)
+						}
+					})
+				//end
+					//res.status(200).send({ doc })
 				},
 				( err ) => {
 					res.status(404).send('unable to fine article')
