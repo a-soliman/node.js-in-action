@@ -12,9 +12,11 @@ const articles = [{ title: 'Exmaple' }];
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/css/bootstrap.css', express.static('node_modules/bootstrap/dist/css/bootstrap.css'));
 // app.use('/', express.static(__dirname + '/public'));
 
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 
 function isValidId(id) {
 	if( !ObjectID.isValid(id) ) {
@@ -40,7 +42,7 @@ app.get('/articles', ( req, res, next) => {
 					}
 				})
 				//end
-				res.render('articles.ejs', {articles})
+				//res.render('articles.ejs', {articles})
 			// res.status(200).send({ articles });
 			}, 
 			( err ) => {
