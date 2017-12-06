@@ -1,0 +1,188 @@
+<div class="sectionbody"><span>
+</span><h3 id="_relational_databases">8.1. Relational databases</h3>
+
+<span>
+</span><div class="sect2"><span>
+</span><h3 id="_postgresql">8.2. PostgreSQL</h3><span>
+</span><h4 id="_installation_and_setup">8.2.1. Installation and setup</h4>
+
+<span>
+</span><h4 id="_creating_the_database">8.2.2. Creating the database</h4>
+
+<span>
+</span><h4 id="_connecting_to_postgres_from_node">8.2.3. Connecting to Postgres from Node</h4>
+
+<span>
+</span><h4 id="_defining_tables">8.2.4. Defining tables</h4>
+
+<span>
+</span><h4 id="_inserting_data">8.2.5. Inserting data</h4>
+
+<span>
+</span><h4 id="_updating_data">8.2.6. Updating data</h4>
+
+<span>
+</span><h4 id="_querying_data">8.2.7. Querying data</h4>
+
+<span>
+</span></div><span>
+</span><div class="sect2"><span>
+</span><h3 id="_knex">8.3. Knex</h3><span>
+</span><h4 id="_jquery_for_databases">8.3.1. jQuery for databases</h4>
+
+<span>
+</span><h4 id="_connecting_and_running_queries_with_knex">8.3.2. Connecting and running queries with Knex</h4>
+
+<span>
+</span><h4 id="_swapping_the_database_backend">8.3.3. Swapping the database backend</h4>
+
+<span>
+</span><h4 id="_beware_of_leaky_abstractions">8.3.4. Beware of leaky abstractions</h4>
+
+<span>
+</span></div><span>
+</span><h3 id="_mysql_vs_postgresql">8.4. MySQL vs PostgreSQL</h3>
+
+<span>
+</span><div class="sect2"><span>
+</span><h3 id="_acid_guarantees">8.5. ACID Guarantees</h3><span>
+</span><h4 id="_atomicity_transactions_either_succeed_or_fail_in_entirety">8.5.1. Atomicity: transactions either succeed or fail in entirety</h4>
+
+<span>
+</span><h4 id="_consistency_constraints_are_always_enforced">8.5.2. Consistency: constraints are always enforced</h4>
+
+<span>
+</span><h4 id="_isolation_concurrent_transactions_don_t_interfere">8.5.3. Isolation: concurrent transactions don’t interfere</h4>
+
+<span>
+</span><h4 id="_durability_transactions_are_permanent">8.5.4. Durability: transactions are permanent</h4>
+
+<span>
+</span></div><span>
+</span><h3 id="_nosql">8.6. NoSQL</h3>
+
+<span>
+</span><h3 id="_distributed_databases">8.7. Distributed Databases</h3>
+
+<span>
+</span><div class="sect2"><span>
+</span><h3 id="_mongodb">8.8. MongoDB</h3><span>
+</span><h4 id="_installation_and_setup_2">8.8.1. Installation and Setup</h4>
+
+<span>
+</span><h4 id="_connecting_to_mongodb">8.8.2. Connecting to MongoDB</h4>
+
+<span>
+</span><h4 id="_inserting_documents">8.8.3. Inserting documents</h4>
+
+<span>
+</span><h4 id="_querying">8.8.4. Querying</h4>
+
+<span>
+</span><h4 id="_mongodb_identifiers">8.8.5. MongoDB identifiers</h4>
+
+<span>
+</span><h4 id="_replica_sets">8.8.6. Replica sets</h4>
+
+<span>
+</span><h4 id="_write_concerns">8.8.7. Write concerns</h4>
+
+<span>
+</span></div><span>
+</span><h3 id="_key_value_stores">8.9. Key-value stores</h3>
+
+<span>
+</span><div class="sect2"><span>
+</span><h3 id="_redis">8.10. Redis</h3><span>
+</span><h4 id="_installation_and_setup_3">8.10.1. Installation and setup</h4>
+
+<span>
+</span><h4 id="_initialization">8.10.2. Initialization</h4>
+
+<span>
+</span><h4 id="_key_value_pairs">8.10.3. Key-value pairs</h4>
+
+<span>
+</span><h4 id="_keys">8.10.4. Keys</h4>
+
+<span>
+</span><h4 id="_encoding_and_data_types">8.10.5. Encoding and data types</h4>
+
+<span>
+</span><h4 id="_hashes">8.10.6. Hashes</h4>
+
+<span>
+</span><h4 id="_lists">8.10.7. Lists</h4>
+
+<span>
+</span><h4 id="_sets">8.10.8. Sets</h4>
+
+<span>
+</span><h4 id="_pub_sub_with_channels">8.10.9. Pub-Sub with channels</h4>
+
+<span>
+</span><h4 id="_redis_performance">8.10.10. Redis performance</h4>
+
+<span>
+</span></div><span>
+</span><h3 id="_embedded_databases">8.11. Embedded databases</h3>
+
+<span>
+</span><div class="sect2"><span>
+</span><h3 id="_leveldb">8.12. LevelDB</h3><span>
+</span><h4 id="_levelup_and_leveldown">8.12.1. LevelUP and LevelDOWN</h4>
+
+<span>
+</span><h4 id="_installation">8.12.2. Installation</h4>
+
+<span>
+</span><h4 id="_api_overview">8.12.3. API overview</h4>
+
+<span>
+</span><h4 id="_initialization_2">8.12.4. Initialization</h4>
+
+<span>
+</span><h4 id="_key_value_encodings">8.12.5. Key/value encodings</h4>
+
+<span>
+</span><h4 id="_reading_and_writing_key_value_pairs">8.12.6. Reading and writing key-value pairs</h4>
+
+<span>
+</span><h4 id="_pluggable_backends">8.12.7. Pluggable backends</h4>
+
+<span>
+</span><h4 id="_the_modular_database">8.12.8. The modular database</h4>
+
+<span>
+</span></div><span>
+</span><h3 id="_serialization_and_deserialization_are_expensive">8.13. Serialization and deserialization are expensive</h3>
+
+<span>
+</span><div class="sect2"><span>
+</span><h3 id="_in_browser_storage">8.14. In-browser storage</h3><span>
+</span><h4 id="_web_storage_localstorage_and_sessionstorage">8.14.1. Web storage: localStorage and sessionStorage</h4>
+
+<span>
+</span><h4 id="_reading_and_writing_values">8.14.2. Reading and writing values</h4>
+
+<span>
+</span><h4 id="_localforage">8.14.3. localforage</h4>
+
+<span>
+</span><h4 id="_reading_and_writing">8.14.4. Reading and writing</h4>
+
+<span>
+</span></div><span>
+</span><div class="sect2"><span>
+</span><h3 id="_hosted_storage">8.15. Hosted storage</h3><span>
+</span><h4 id="_simple_storage_service_s3">8.15.1. Simple Storage Service (S3)</h4>
+
+<span>
+</span></div><span>
+</span><h3 id="_which_database">8.16. Which database?</h3>
+
+<span>
+</span><h3 id="_summary_8">8.17. Summary</h3>
+
+<span>
+</span></div>

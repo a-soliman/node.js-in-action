@@ -56,21 +56,35 @@ app.get('/articles/:id', ( req, res, next ) => {
 
 // POST ARTICLE
 app.post('/articles', ( req, res ) => {
-	let newArticle = new Article({
-		title: req.body.title
-	});
 
-	newArticle.save()
-		.then(
-			( doc ) => {
-				res.status(200).send({message: 'Saved', data: doc})
-			}, 
-			( err) => {
+	let url = req.body.url;
+	read(url, ( err, result ) => {
+		if ( err ) {
+			return res.status(500).send('Error downloading the article.')
+		}
+		if (!result ) {
+			return res.status(500).send('Error downloading the article.');
+		}
+
+		let newArticle = new Article({
+			title: result.title,
+			content: result.content
+		});
+
+		newArticle.save()
+			.then(
+				( doc ) => {
+					res.status(200).send({message: 'Saved', data: doc})
+				}, 
+				( err) => {
+					res.status(400).send()
+				})
+			.catch((e) => {
 				res.status(400).send()
 			})
-		.catch((e) => {
-			res.status(400).send()
-		})
+	})
+
+	
 	
 });
 
