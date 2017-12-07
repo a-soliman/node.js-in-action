@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "babel": "./node_modules/.bin/babel src -d lib",
+    "uglifyjs": "./node_modules/.bin/uglifyjs lib/app.js -o lib/app.min.js -c -m",
+    "build": "npm run babel && npm run uglifyjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,6 +14,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "uglify-es": "^3.2.1"
   }
 }
