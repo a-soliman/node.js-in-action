@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "babel": "./node_modules/.bin/babel src -d lib",
-    "uglifyjs": "./node_modules/.bin/uglifyjs lib/app.js -o lib/app.min.js -c -m",
+    "uglifyjs": "./node_modules/.bin/uglifyjs lib/*.js -o lib/app.min.js -c -m",
     "build": "npm run babel && npm run uglifyjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
